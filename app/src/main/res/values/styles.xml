@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BtnNext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/common_tv_white</item>
+        <item name="android:background">@drawable/btn_next_blue</item>
+        <item name="android:layout_marginLeft">@dimen/common_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/common_margin_right</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
 </resources>

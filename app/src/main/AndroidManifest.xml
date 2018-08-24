@@ -30,6 +30,10 @@
         </activity>
         <activity android:name=".WebActivity" />
         <activity android:name=".GaoDeMapActivity"/>
+        <activity
+            android:name=".dialog.DialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
 
         <!--这里是我新添加的-->
         <!--声明定位service-->

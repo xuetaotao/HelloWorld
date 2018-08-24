@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.xuetaotao.helloworld.dialog.DialogActivity;
+
 public class HelloWorldActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "HelloWorldActivity";
@@ -18,7 +20,7 @@ public class HelloWorldActivity extends AppCompatActivity implements View.OnClic
     public static final int UPDATE_TEXT = 1;
     private int test = 1;
     private TextView textView;
-    private Button button1, button2, button3, button4;
+    private Button button1, button2, button3, button4, btnDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class HelloWorldActivity extends AppCompatActivity implements View.OnClic
         button3.setOnClickListener(this);
         button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(this);
+        btnDialog = (Button) findViewById(R.id.btn_dialog);
+        btnDialog.setOnClickListener(this);
 //        textView.setText(test+"");
 //        test = add(test);
 //        sub(test);
@@ -82,6 +86,9 @@ public class HelloWorldActivity extends AppCompatActivity implements View.OnClic
             case R.id.button4:
                 Intent intent1 = new Intent(HelloWorldActivity.this,GaoDeMapActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.btn_dialog:
+                DialogActivity.newInstance(this);
                 break;
             default:
                 break;

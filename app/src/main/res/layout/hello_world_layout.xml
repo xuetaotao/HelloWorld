@@ -1,61 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_hello_world"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Hello World!"
-        android:textSize="18sp"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@color/colorPrimary"
-        android:text="确定"
-        android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tv_hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hello World!"
+            android:textSize="18sp"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@color/colorPrimary"
-        android:text="创建子线程"
-        android:textSize="18sp"/>
+        <Button
+            android:id="@+id/button1"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@style/BtnNext"
+            android:text="确定"
+            android:textSize="18sp"/>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@color/colorPrimary"
-        android:textAllCaps="false"
-        android:text="WebView"
-        android:textSize="18sp"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@style/BtnNext"
+            android:text="创建子线程"
+            android:textSize="18sp"/>
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@color/colorPrimary"
-        android:textAllCaps="false"
-        android:text="高德地图"
-        android:textSize="18sp"/>
+        <Button
+            android:id="@+id/button3"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="WebView"
+            android:textSize="18sp"/>
+        <!--textAllCaps : 全部字母大写？-->
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button4"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="高德地图"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            style="@style/BtnNext"
+            android:text="对话框"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

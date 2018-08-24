@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_alertdialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="AlertDialog"/>
+
+        <Button
+            android:id="@+id/btn_alertdialog2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="ListDialog"/>
+
+        <Button
+            android:id="@+id/btn_single_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="SingleDialog"/>
+
+        <Button
+            android:id="@+id/btn_multi_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="MultiDialog"/>
+
+        <Button
+            android:id="@+id/btn_progress_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="ProgressDialog"/>
+
+        <Button
+            android:id="@+id/btn_progress_dialog2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="ProgressDialog2"/>
+
+        <Button
+            android:id="@+id/btn_edit_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="EditDialog"/>
+
+        <Button
+            android:id="@+id/btn_custom_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="CustomDialog"/>
+
+        <Button
+            android:id="@+id/btn_custom_dialog2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/BtnNext"
+            android:textAllCaps="false"
+            android:text="CustomDialog2"/>
+
+    </LinearLayout>
+
+</ScrollView>
