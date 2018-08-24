@@ -1,6 +1,8 @@
 package com.example.xuetaotao.helloworld.dialog;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,12 +10,17 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.xuetaotao.helloworld.R;
+
+import java.util.Calendar;
 
 import static android.app.ProgressDialog.STYLE_HORIZONTAL;
 import static android.app.ProgressDialog.STYLE_SPINNER;
@@ -51,6 +58,12 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         btnEditDialog.setOnClickListener(this);
         Button btnCustomDialog = (Button) findViewById(R.id.btn_custom_dialog);
         btnCustomDialog.setOnClickListener(this);
+        Button btnDateDialog = (Button) findViewById(R.id.btn_date_dialog);
+        btnDateDialog.setOnClickListener(this);
+        Button btnTimeDialog = (Button) findViewById(R.id.btn_time_dialog);
+        btnTimeDialog.setOnClickListener(this);
+        Button btnDateTimeDialog = (Button) findViewById(R.id.btn_date_time_dialog);
+        btnDateTimeDialog.setOnClickListener(this);
     }
 
     @Override
@@ -249,6 +262,69 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 //该方法会返回一个AlertDialog对象，可以用来调用dismiss方法
                 //AlertDialog alertDialog = new AlertDialog.Builder(this).create();或者通过该方式创建AlertDialog
                 customDialog.show();
+                break;
+            /**
+             * 日期 DatePickerDialog
+             */
+            case R.id.btn_date_dialog:
+                //获取系统的当前日期
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dateDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Toast.makeText(DialogActivity.this, year + "年" + (month+1) + "月" + dayOfMonth + "日", Toast.LENGTH_SHORT).show();
+                    }
+                }, year, month, dayOfMonth);
+                dateDialog.show();
+                break;
+            /**
+             * 时间 TimePickerDialog
+             */
+            case R.id.btn_time_dialog:
+                //获取系统当前时间
+                Calendar calendar1 = Calendar.getInstance();
+                int hour = calendar1.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar1.get(Calendar.MINUTE);
+
+                TimePickerDialog timeDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Toast.makeText(DialogActivity.this, hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+                    }
+                }, hour, minute, true);
+                timeDialog.show();
+                break;
+            /**
+             * 日期时间对话框
+             * 如果把时间对话框部分放在DatePickerDialog中会出现，timePickerDialog显示两次的情况
+             */
+            case R.id.btn_date_time_dialog:
+                Calendar calendar2 = Calendar.getInstance();
+                int year2 = calendar2.get(Calendar.YEAR);
+                int month2 = calendar2.get(Calendar.MONTH);
+                int dayOfMonth2 = calendar2.get(Calendar.DAY_OF_MONTH);
+                int hour2 = calendar2.get(Calendar.HOUR_OF_DAY);
+                int minute2 = calendar2.get(Calendar.MINUTE);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Toast.makeText(DialogActivity.this, year + "年" + (month+1) + "月" + dayOfMonth + "日", Toast.LENGTH_SHORT).show();
+                    }
+                }, year2, month2, dayOfMonth2);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(DialogActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Toast.makeText(DialogActivity.this, hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+                        Log.e("DialogActivity", hourOfDay + ":" + minute);
+                    }
+                }, hour2, minute2, true);
+                timePickerDialog.show();
+                datePickerDialog.show();
                 break;
             default:
                 break;
