@@ -10,9 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 import com.example.xuetaotao.helloworld.dialog.DialogActivity;
 
-public class HelloWorldActivity extends AppCompatActivity implements View.OnClickListener{
+
+public class HelloWorldActivity extends BaseTitleActivity implements View.OnClickListener{
 
     private static final String TAG = "HelloWorldActivity";
     private String info = "Hello World!";
@@ -95,7 +97,7 @@ public class HelloWorldActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    //    private int  add(int i){
+//    private int  add(int i){
 //
 //        for(;i < 100; i++){
 //

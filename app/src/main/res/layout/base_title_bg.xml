@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="70dp"
+    android:paddingTop="20dp"
+    android:gravity="center_vertical"
+    android:background="@color/common_blue">
 
-    <!--TODO 自己写一个基本你的标题类-->
-</LinearLayout>
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/common_margin_left"
+        android:src="@mipmap/back"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="标题"
+        android:textSize="18sp"
+        android:textColor="@color/common_tv_black"/>
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/common_margin_right"
+        android:text="我是"
+        android:textSize="18sp"
+        android:textColor="@color/common_tv_black"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/common_margin_right"
+        android:src="@mipmap/hhrfr_icon_search"/>
+
+</RelativeLayout>

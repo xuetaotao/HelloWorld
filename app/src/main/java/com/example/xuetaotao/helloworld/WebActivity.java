@@ -1,11 +1,12 @@
 package com.example.xuetaotao.helloworld;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class WebActivity extends AppCompatActivity {
+import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
+
+public class WebActivity extends BaseTitleActivity {
 
     private String url = "http://www.baidu.com";
 

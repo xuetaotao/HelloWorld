@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">@color/common_blue</color>
+    <color name="colorPrimaryDark">@color/common_blue</color>
+    <color name="colorAccent">@color/common_blue</color>
 
     <!--自定义-->
     <color name="common_tv_white">#ffffff</color>
+    <color name="common_tv_gray">#a3a3a3</color>
+    <color name="common_tv_black">#333333</color>
+    <color name="common_blue">#3389ff</color>
 
 </resources>

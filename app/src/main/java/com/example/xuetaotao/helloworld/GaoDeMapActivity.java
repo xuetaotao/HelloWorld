@@ -20,12 +20,13 @@ import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
+import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 //监听定位和定位变化
-public class GaoDeMapActivity extends AppCompatActivity implements LocationSource, AMapLocationListener {
+public class GaoDeMapActivity extends BaseTitleActivity implements LocationSource, AMapLocationListener {
 
     //显示地图需要的变量
     private MapView mapView;    //地图控件

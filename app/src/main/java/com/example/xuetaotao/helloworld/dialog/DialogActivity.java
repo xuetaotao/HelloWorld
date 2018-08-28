@@ -19,6 +19,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.xuetaotao.helloworld.R;
+import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 
 import java.util.Calendar;
 
@@ -26,7 +27,7 @@ import static android.app.ProgressDialog.STYLE_HORIZONTAL;
 import static android.app.ProgressDialog.STYLE_SPINNER;
 
 
-public class DialogActivity extends AppCompatActivity implements View.OnClickListener {
+public class DialogActivity extends BaseTitleActivity implements View.OnClickListener {
 
     private int choice = -1;
 
@@ -65,6 +66,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         Button btnDateTimeDialog = (Button) findViewById(R.id.btn_date_time_dialog);
         btnDateTimeDialog.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {
