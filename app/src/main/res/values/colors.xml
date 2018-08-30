@@ -8,6 +8,11 @@
     <color name="common_tv_white">#ffffff</color>
     <color name="common_tv_gray">#a3a3a3</color>
     <color name="common_tv_black">#333333</color>
+    <color name="common_tv_gold">#fc8e22</color>
+    <color name="common_tv_green">#00c5b7</color>
+    <color name="common_tv_hint">#b9b9b9</color>
     <color name="common_blue">#3389ff</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#5cb85c</color>
 
 </resources>

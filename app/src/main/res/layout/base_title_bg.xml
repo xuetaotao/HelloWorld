@@ -8,22 +8,25 @@
 
     <ImageView
         android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/common_margin_left"
+        android:scaleType="center"
         android:src="@mipmap/back"/>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
         android:gravity="center"
-        android:text="标题"
+        android:maxLines="1"
+        android:text=""
         android:textSize="18sp"
-        android:textColor="@color/common_tv_black"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/tv_right"
@@ -31,19 +34,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/common_margin_right"
-        android:text="我是"
-        android:textSize="18sp"
-        android:textColor="@color/common_tv_black"
+        android:paddingRight="@dimen/common_margin_right"
+        android:gravity="center"
+        android:text="编辑"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/iv_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/common_margin_right"
-        android:src="@mipmap/hhrfr_icon_search"/>
+        android:scaleType="center"
+        android:src="@mipmap/hhrfr_icon_search"
+        android:visibility="gone"/>
 
 </RelativeLayout>

@@ -1,6 +1,5 @@
-package com.example.xuetaotao.helloworld;
+package com.example.xuetaotao.helloworld.map;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,10 +15,10 @@ import com.amap.api.maps2d.CameraUpdateFactory;
 import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
 import com.amap.api.maps2d.UiSettings;
-import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
+import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 
 import java.text.SimpleDateFormat;
@@ -46,7 +45,7 @@ public class GaoDeMapActivity extends BaseTitleActivity implements LocationSourc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gao_de_map);
+//        setContentView(R.layout.activity_gao_de_map);
 
         button = (Button) findViewById(R.id.mButton);
 
@@ -196,6 +195,26 @@ public class GaoDeMapActivity extends BaseTitleActivity implements LocationSourc
         //设置多少帧刷新一次图片资源
         options.period(60);
         return options;
+    }
+
+    @Override
+    public int getResourcesId() {
+        return R.layout.activity_gao_de_map;
+    }
+
+    @Override
+    public int getTitleText() {
+        return R.string.nearby_college;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
+
     }
 
     @Override

@@ -1,17 +1,22 @@
-package com.example.xuetaotao.helloworld;
+package com.example.xuetaotao.helloworld.main;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 import com.example.xuetaotao.helloworld.dialog.DialogActivity;
+import com.example.xuetaotao.helloworld.map.GaoDeMapActivity;
+import com.example.xuetaotao.helloworld.toast.ToastActivity;
+import com.example.xuetaotao.helloworld.webview.WebActivity;
+
+import butterknife.BindView;
 
 
 public class HelloWorldActivity extends BaseTitleActivity implements View.OnClickListener{
@@ -22,13 +27,27 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
     public static final int UPDATE_TEXT = 1;
     private int test = 1;
     private TextView textView;
-    private Button button1, button2, button3, button4, btnDialog;
+    private Button button1, button2, button3, button4, btnDialog, btnToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hello_world_layout);
+//        setContentView(R.layout.hello_world_layout);
         Log.d(TAG,"hahahaha");
+    }
+
+    @Override
+    public int getResourcesId() {
+        return R.layout.hello_world_layout;
+    }
+
+    @Override
+    public int getTitleText() {
+        return R.string.main_title;
+    }
+
+    @Override
+    public void initView() {
 
         textView = (TextView) findViewById(R.id.tv_hello_world);
         button1 = (Button) findViewById(R.id.button1);
@@ -41,9 +60,15 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
         button4.setOnClickListener(this);
         btnDialog = (Button) findViewById(R.id.btn_dialog);
         btnDialog.setOnClickListener(this);
+        btnToast = (Button) findViewById(R.id.btn_toast);
+        btnToast.setOnClickListener(this);
 //        textView.setText(test+"");
 //        test = add(test);
 //        sub(test);
+    }
+
+    @Override
+    public void initData() {
 
     }
 
@@ -91,6 +116,9 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
                 break;
             case R.id.btn_dialog:
                 DialogActivity.newInstance(this);
+                break;
+            case R.id.btn_toast:
+                ToastActivity.newInstance(this);
                 break;
             default:
                 break;

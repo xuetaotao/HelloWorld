@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">HelloWorld</string>
+
+    <!--主功能-->
+    <string name="main_title">校招通</string>
+    <string name="nearby_college">周边高校</string>
+    <string name="explore">百度一下</string>
+    <string name="main_function">功能详情</string>
+    <string name="play_toast">玩转Toast</string>
+
+
+    <!--玩转Toast-->
+    <string name="picture_toast">我是带图片的自定义Toast</string>
+
 </resources>

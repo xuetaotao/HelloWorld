@@ -15,88 +15,65 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_hello_world"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Hello World!"
-                android:textSize="18sp"/>
-
             <Button
-                android:id="@+id/button1"
-                android:layout_marginTop="20dp"
+                android:id="@+id/btn_basic_toast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 style="@style/BtnNext"
-                android:text="确定"
-                android:textSize="18sp"/>
+                android:textAllCaps="false"
+                android:text="Basic Toast"/>
 
             <Button
-                android:id="@+id/button2"
-                android:layout_marginTop="20dp"
+                android:id="@+id/btn_basic_toast2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 style="@style/BtnNext"
-                android:text="创建子线程"
-                android:textSize="18sp"/>
+                android:textAllCaps="false"
+                android:text="Basic Toast2"/>
 
             <Button
-                android:id="@+id/button3"
-                android:layout_marginTop="20dp"
+                android:id="@+id/btn_custom_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                style="@style/BtnNext"
+                android:textAllCaps="false"
+                android:text="自定义位置Toast"/>
+
+            <Button
+                android:id="@+id/btn_custom_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                style="@style/BtnNext"
+                android:textAllCaps="false"
+                android:text="带图片Toast"/>
+
+            <Button
+                android:id="@+id/btn_custom_smile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                style="@style/BtnNext"
+                android:textAllCaps="false"
+                android:text="自定义Widget"/>
+
+            <Button
+                android:id="@+id/btn_custom_smile2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
                 style="@style/BtnNext"
                 android:textAllCaps="false"
-                android:text="WebView"
-                android:textSize="18sp"/>
-            <!--textAllCaps : 全部字母大写？-->
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_marginTop="20dp"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                style="@style/BtnNext"
-                android:textAllCaps="false"
-                android:text="高德地图"
-                android:textSize="18sp"/>
-
-            <Button
-                android:id="@+id/btn_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                style="@style/BtnNext"
-                android:text="对话框"/>
-
-            <Button
-                android:id="@+id/btn_toast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:textAllCaps="false"
-                style="@style/BtnNext"
-                android:text="玩转Toast"/>
-
-            <EditText
-                android:id="@+id/et_test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:hint="Please Input SomeThing"
-                android:textSize="18sp"
-                android:textColor="@color/common_tv_gray"
-                android:visibility="gone"/>
+                android:text="自定义Widget2"/>
 
         </LinearLayout>
 

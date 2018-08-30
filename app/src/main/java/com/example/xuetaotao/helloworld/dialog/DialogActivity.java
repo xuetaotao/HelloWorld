@@ -41,7 +41,7 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog);
+//        setContentView(R.layout.activity_dialog);
 
         Button btnAlertdialog = (Button) findViewById(R.id.btn_alertdialog);
         btnAlertdialog.setOnClickListener(this);
@@ -67,6 +67,25 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
         btnDateTimeDialog.setOnClickListener(this);
     }
 
+    @Override
+    public int getResourcesId() {
+        return R.layout.activity_dialog;
+    }
+
+    @Override
+    public int getTitleText() {
+        return R.string.main_function;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
 
     @Override
     public void onClick(View v) {
