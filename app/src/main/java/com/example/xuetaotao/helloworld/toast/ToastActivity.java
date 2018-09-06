@@ -111,6 +111,7 @@ public class ToastActivity extends BaseTitleActivity {
                 break;
 
             /* 自定义Toast控件，带个动画效果
+             * 解决了原生Toast不能快速更新的问题
              * 但是并没有摆脱原生Toast显示方法的调用 */
             case R.id.btn_custom_smile:
                 ToastUtils.showToast(this, "在看我", true);

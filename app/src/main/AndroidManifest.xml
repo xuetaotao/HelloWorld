@@ -42,6 +42,30 @@
             android:name=".dialog.DialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".toast.ToastActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".news.NewsContentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".news.NewsTitleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.FirstCodeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity android:name=".demo.SecondActivity">
+            <intent-filter>
+                <action android:name="com.example.intent.ACTIONSTART"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.example.intent.CUSTOM_CATEGORY"/>
+            </intent-filter>
+
+        </activity>
 
         <!-- 这里是我新添加的 -->
         <!-- 声明定位service -->
@@ -52,7 +76,7 @@
             android:name="com.amap.api.v2.apikey"
             android:value="de73d23f077df20c09532db52beff552" />
 
-        <activity android:name=".toast.ToastActivity"></activity>
+
     </application>
 
 </manifest>

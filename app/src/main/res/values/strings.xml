@@ -12,4 +12,9 @@
     <!--玩转Toast-->
     <string name="picture_toast">我是带图片的自定义Toast</string>
 
+    <!--第一行代码练习-->
+    <string name="first_code">第一行代码</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+
 </resources>

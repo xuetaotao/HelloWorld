@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
+import com.example.xuetaotao.helloworld.demo.FirstCodeActivity;
 import com.example.xuetaotao.helloworld.dialog.DialogActivity;
 import com.example.xuetaotao.helloworld.map.GaoDeMapActivity;
+import com.example.xuetaotao.helloworld.news.NewsContentActivity;
+import com.example.xuetaotao.helloworld.news.NewsTitleActivity;
 import com.example.xuetaotao.helloworld.toast.ToastActivity;
 import com.example.xuetaotao.helloworld.webview.WebActivity;
 
@@ -27,7 +30,7 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
     public static final int UPDATE_TEXT = 1;
     private int test = 1;
     private TextView textView;
-    private Button button1, button2, button3, button4, btnDialog, btnToast;
+    private Button button1, button2, button3, button4, btnDialog, btnToast, btnNews, btnFirstCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,10 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
         btnDialog.setOnClickListener(this);
         btnToast = (Button) findViewById(R.id.btn_toast);
         btnToast.setOnClickListener(this);
+        btnNews = (Button) findViewById(R.id.btn_news);
+        btnNews.setOnClickListener(this);
+        btnFirstCode = (Button) findViewById(R.id.btn_first_code);
+        btnFirstCode.setOnClickListener(this);
 //        textView.setText(test+"");
 //        test = add(test);
 //        sub(test);
@@ -119,6 +126,12 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
                 break;
             case R.id.btn_toast:
                 ToastActivity.newInstance(this);
+                break;
+            case R.id.btn_news:
+                NewsTitleActivity.newInstance(this);
+                break;
+            case R.id.btn_first_code:
+                FirstCodeActivity.newInstance(this);
                 break;
             default:
                 break;

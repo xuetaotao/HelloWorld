@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_title_bg"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_toast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.2.4  在活动中使用Toast"/>
+
+            <Button
+                android:id="@+id/btn_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.2.5  在活动中使用Menu(未实现)"/>
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.2.6  销毁一个活动"/>
+
+            <Button
+                android:id="@+id/btn_implicit_intent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.3.2  使用隐式Intent"/>
+
+            <Button
+                android:id="@+id/btn_implicit_intent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.3.3  隐式Intent启动其他程序"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

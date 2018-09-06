@@ -14,5 +14,6 @@
     <color name="common_blue">#3389ff</color>
     <color name="white">#ffffff</color>
     <color name="green">#5cb85c</color>
+    <color name="black">#000</color>
 
 </resources>

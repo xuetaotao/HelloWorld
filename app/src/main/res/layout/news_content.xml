@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_news_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--引入NewsContentFragment相当于把news_content_frag布局的内容自动加了进来-->
+    <fragment
+        android:id="@+id/news_content_fragment"
+        android:name="com.example.xuetaotao.helloworld.news.fragment.NewsContentFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
