@@ -14,11 +14,15 @@ import android.widget.Toast;
 
 import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
+import com.example.xuetaotao.helloworld.demo.activitylife.ActivityLifeCycleTest;
+import com.example.xuetaotao.helloworld.utils.ActivityUtils;
 
 /**
  * 该部分，主要用于练习《第一行代码》中的例子
  */
 public class FirstCodeActivity extends BaseTitleActivity implements View.OnClickListener{
+
+    private Button btnImplicitIntent4;
 
     public static void newInstance(Context context){
         Intent intent = new Intent(context, FirstCodeActivity.class);
@@ -28,7 +32,7 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("FirstCodeActivity", "~~~~~~~~FirstCodeActivity~~~~~~~~~");
+        Log.e("FirstCodeActivity", "~~~~~~~~FirstCodeActivity~~~~~~~~~" + this.toString() + "TaskId：" + getTaskId());
     }
 
     @Override
@@ -87,11 +91,119 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
         btnImplicitIntent1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);     //这里不需要在AndroidManifest中添加声明
-                intent.setData(Uri.parse("http://www.taobao.com"));
+//                Intent intent = new Intent(Intent.ACTION_VIEW);     //这里不需要在AndroidManifest中添加声明
+//                intent.setData(Uri.parse("http://www.taobao.com"));
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
                 startActivity(intent);
             }
         });
+
+        /**
+         *2.3.3  隐式Intent启动自身活动响应http数据请求(未实现，有问题) TODO
+         */
+        Button btnImplicitIntent2 = (Button) findViewById(R.id.btn_implicit_intent2);
+        btnImplicitIntent2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addCategory("android.intent.category.BROWSABLE");
+                intent.setData(Uri.parse("http://www.sina.com"));
+                startActivity(intent);
+            }
+        });
+
+        /**
+         *2.3.4  向下一个活动传递数据
+         */
+        Button btnImplicitIntent3 = (Button) findViewById(R.id.btn_implicit_intent3);
+        btnImplicitIntent3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = "This is some datas deliverd from last Activity";
+                Intent intent = new Intent(FirstCodeActivity.this, SecondActivity.class);
+                intent.putExtra("extra_data", data);
+                startActivity(intent);
+            }
+        });
+
+        /**
+         *2.3.5  返回数据给上一个活动
+         */
+        btnImplicitIntent4 = (Button) findViewById(R.id.btn_implicit_intent4);
+        btnImplicitIntent4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstCodeActivity.this, ThirdActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+
+        /**
+         *2.4.4  体验活动的生命周期
+         */
+        Button btnActivityLife = (Button) findViewById(R.id.btn_activity_life);
+        btnActivityLife.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityLifeCycleTest.newsInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         * 2.4.5  活动被回收了怎么办
+         * 看不到效果，可以通过log看到onSaveInstanceState调用的，是在onStop前面的阶段，但是再进入应用程序是不会调用onCreate。
+         * 即便再back一次，销毁当前活动，重新执行 onCreate ，但是还是无法进入 if(savedInstanceState != null)中
+         */
+        Button btnActivityRecycle = (Button) findViewById(R.id.btn_activity_recycle);
+        btnActivityRecycle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityLifeCycleTest.newsInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         *2.5.1  standard活动启动模式
+         * 系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个该活动的新实例
+         * 每点击一次按钮，就会创建出一个新的 FirstCodeActivity 实例，则多需要点击一次 Back 键才能返回
+         */
+        Button btnActivityMode = (Button) findViewById(R.id.btn_activity_mode);
+        btnActivityMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstCodeActivity.this, FirstCodeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /**
+         *2.6.2  随时随地退出程序
+         */
+        Button btnActivityFinish = (Button) findViewById(R.id.btn_activity_finish);
+        btnActivityFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityUtils.finishAll();
+            }
+        });
+    }
+
+    //没有super调用父类的方法
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        switch (requestCode){
+
+            case 1:
+                if (resultCode == RESULT_OK){
+                    String dataReturn = data.getStringExtra("data_return");
+                    btnImplicitIntent4.setText(dataReturn);
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -136,4 +248,10 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
 //        }
 //        return true;
 //    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("FirstCodeActivity", "-----FirstCodeActivity  onDestroy-----");
+    }
 }

@@ -53,7 +53,7 @@
                 android:layout_gravity="center"
                 android:textAllCaps="false"
                 style="@style/BtnNext"
-                android:text="2.3.2  使用隐式Intent"/>
+                android:text="2.3.2  使用隐式Intent启动新的Activity"/>
 
             <Button
                 android:id="@+id/btn_implicit_intent1"
@@ -64,6 +64,77 @@
                 android:textAllCaps="false"
                 style="@style/BtnNext"
                 android:text="2.3.3  隐式Intent启动其他程序"/>
+
+            <Button
+                android:id="@+id/btn_implicit_intent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.3.3  隐式Intent启动自身浏览器(未实现)"/>
+
+            <Button
+                android:id="@+id/btn_implicit_intent3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.3.4  向下一个活动传递数据"/>
+
+            <Button
+                android:id="@+id/btn_implicit_intent4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.3.5  返回数据给上一个活动"/>
+
+            <Button
+                android:id="@+id/btn_activity_life"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.4.4  体验活动的生命周期"/>
+
+            <Button
+                android:id="@+id/btn_activity_recycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.4.5  活动被回收了怎么办(无效果)"/>
+
+            <Button
+                android:id="@+id/btn_activity_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.5.1  standard活动启动模式"/>
+
+            <Button
+                android:id="@+id/btn_activity_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="2.6.2  随时随地退出程序"/>
+
 
         </LinearLayout>
 

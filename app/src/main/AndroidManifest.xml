@@ -58,14 +58,33 @@
             android:name=".demo.FirstCodeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
-        <activity android:name=".demo.SecondActivity">
+        <!--测试SecondActivity的singleInstance启动模式-->
+        <activity android:name=".demo.SecondActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="com.example.intent.ACTIONSTART"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="com.example.intent.CUSTOM_CATEGORY"/>
-            </intent-filter>
+                <action android:name="com.example.intent.ACTIONSTART" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.intent.CUSTOM_CATEGORY" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".demo.ThirdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.activitylife.ActivityLifeCycleTest"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
 
         <!-- 这里是我新添加的 -->
         <!-- 声明定位service -->
@@ -76,7 +95,12 @@
             android:name="com.amap.api.v2.apikey"
             android:value="de73d23f077df20c09532db52beff552" />
 
+        <activity android:name=".demo.activitylife.NormalActivity" />
+        <activity
+            android:name=".demo.activitylife.DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog">
 
+        </activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.xuetaotao.helloworld.utils.ActivityUtils;
 import com.example.xuetaotao.helloworld.utils.AndroidBug5497Workaround;
 
 import butterknife.ButterKnife;
@@ -24,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         Log.e("activity", "=====" + getClass().getSimpleName() + "=====");
+        ActivityUtils.addActivity(this);
 
         //沉浸式状态栏：将状态栏透明化
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -58,9 +60,11 @@ public abstract class BaseActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.e("activity", "#####" + getClass().getSimpleName() + "：onDestroy" + "#####");
         if (unbinder != null){
             unbinder.unbind();
         }
+        ActivityUtils.removeActivity(this);
     }
 
     public abstract int getResourcesId();

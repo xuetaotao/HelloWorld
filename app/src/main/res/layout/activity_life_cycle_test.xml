@@ -4,23 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_implicit_intent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="2.3.2  使用隐式Intent"
-        android:textSize="18sp" />
-
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:textAllCaps="false"
-        android:text="Start ThirdActivity"
+        android:text="Normal Activity"
         android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:text="Dialog Activity"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_activity_recycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="gone"/>
 
 </LinearLayout>
