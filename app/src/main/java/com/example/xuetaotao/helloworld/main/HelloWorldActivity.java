@@ -1,9 +1,11 @@
 package com.example.xuetaotao.helloworld.main;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,11 +34,24 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
     private TextView textView;
     private Button button1, button2, button3, button4, btnDialog, btnToast, btnNews, btnFirstCode;
 
+    public static void newInstance(Context context){
+        Intent intent = new Intent();
+        intent.setClass(context, HelloWorldActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.hello_world_layout);
         Log.d(TAG,"hahahaha");
+    }
+
+    //TODO 后期移动到Application
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 
     @Override

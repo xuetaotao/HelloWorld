@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.example.xuetaotao.helloworld"
         minSdkVersion 15
         targetSdkVersion 27
@@ -42,5 +43,6 @@ dependencies {
     //https://github.com/scwang90/SmartRefreshLayout    智能下拉刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
 
-
+    //新浪微博认证授权
+    implementation 'com.sina.weibo.sdk:core:4.3.0:openDefaultRelease@aar'
 }

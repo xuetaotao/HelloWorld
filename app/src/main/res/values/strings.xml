@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">HelloWorld</string>
 
-    <!--主功能-->
-    <string name="main_title">校招通</string>
+    <!--主功能  校招通-->
+    <string name="main_title">乾坤大挪移</string>
     <string name="nearby_college">周边高校</string>
     <string name="explore">百度一下</string>
     <string name="main_function">功能详情</string>
@@ -16,5 +16,13 @@
     <string name="first_code">第一行代码</string>
     <string name="add">Add</string>
     <string name="remove">Remove</string>
+
+
+    <!--新浪微博认证授权-->
+    <string name="weibosdk_auth_success">授权成功</string>
+    <string name="weibosdk_auth_failed">授权失败</string>
+    <string name="weibosdk_auth_canceled">取消授权</string>
+    <string name="weibosdk_token_tostring1">Token：%1$s \n有效期：%2$s</string>
+    <string name="weibosdk_token_has_existed">Token 仍在有效期内，无需再次登录。</string>
 
 </resources>

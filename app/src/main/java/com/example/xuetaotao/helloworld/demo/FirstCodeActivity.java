@@ -10,11 +10,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 import com.example.xuetaotao.helloworld.demo.activitylife.ActivityLifeCycleTest;
+import com.example.xuetaotao.helloworld.demo.listview.ListViewActivity;
+import com.example.xuetaotao.helloworld.demo.listview.SimpleListViewActivity;
+import com.example.xuetaotao.helloworld.demo.recyclerview.RecyclerViewActivity;
 import com.example.xuetaotao.helloworld.utils.ActivityUtils;
 
 /**
@@ -185,6 +191,84 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 ActivityUtils.finishAll();
+            }
+        });
+
+        /**
+         *3.2.3  EditText && ImageView
+         */
+        Button btnEditText = (Button) findViewById(R.id.btn_edit_text);
+        final ImageView ivTest = (ImageView) findViewById(R.id.iv_test);
+        final EditText etTest = (EditText) findViewById(R.id.et_test);
+        btnEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = etTest.getText().toString();
+                Toast.makeText(FirstCodeActivity.this, data, Toast.LENGTH_SHORT).show();
+                ivTest.setImageResource(R.mipmap.jyfr_icon_mpossh3x);
+            }
+        });
+
+        /**
+         * 3.2.5  ProgressBar
+         */
+        Button btnProgressbar = (Button) findViewById(R.id.btn_progressbar);
+        final ProgressBar progressbar = (ProgressBar) findViewById(R.id.progressbar);
+        btnProgressbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (progressbar.getVisibility() == View.VISIBLE ){
+                    progressbar.setVisibility(View.GONE);
+                } else {
+                    progressbar.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        /**
+         *3.2.5  ProgressBar_horizon
+         */
+        Button btnProgressbarHorizon = (Button) findViewById(R.id.btn_progressbar_horizon);
+        final ProgressBar progressbarHorizon = (ProgressBar) findViewById(R.id.progressbar_horizon);
+        btnProgressbarHorizon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int progress = progressbarHorizon.getProgress();
+                progress += 10;
+                progressbarHorizon.setProgress(progress);
+            }
+        });
+
+        /**
+         *3.5.1  ListView的简单用法
+         */
+        Button btnListview = (Button) findViewById(R.id.btn_listview);
+        btnListview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SimpleListViewActivity.newsInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         * 3.5.2  定制ListView的界面
+         */
+        Button btnCustomListview = (Button) findViewById(R.id.btn_custom_listview);
+        btnCustomListview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ListViewActivity.newsInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         *3.6  更强大的滚动控件RecyclerView
+         */
+        Button btnRecyclerview = (Button) findViewById(R.id.btn_recyclerview);
+        btnRecyclerview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecyclerViewActivity.newInstance(FirstCodeActivity.this);
             }
         });
     }

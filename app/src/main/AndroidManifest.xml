@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".main.HelloWorldActivity"
+            android:name=".main.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -58,8 +58,9 @@
             android:name=".demo.FirstCodeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
-        <!--测试SecondActivity的singleInstance启动模式-->
-        <activity android:name=".demo.SecondActivity"
+        <!-- 测试SecondActivity的singleInstance启动模式 -->
+        <activity
+            android:name=".demo.SecondActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="com.example.intent.ACTIONSTART" />
@@ -85,6 +86,22 @@
             android:name=".demo.activitylife.ActivityLifeCycleTest"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.listview.SimpleListViewActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.listview.ListViewActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.recyclerview.RecyclerViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".sinaapi.WBAuthActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
 
         <!-- 这里是我新添加的 -->
         <!-- 声明定位service -->
@@ -95,10 +112,21 @@
             android:name="com.amap.api.v2.apikey"
             android:value="de73d23f077df20c09532db52beff552" />
 
-        <activity android:name=".demo.activitylife.NormalActivity" />
+        <activity
+            android:name=".demo.activitylife.NormalActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".demo.activitylife.DialogActivity"
-            android:theme="@style/Theme.AppCompat.Dialog">
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".main.HelloWorldActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait">
 
         </activity>
     </application>
