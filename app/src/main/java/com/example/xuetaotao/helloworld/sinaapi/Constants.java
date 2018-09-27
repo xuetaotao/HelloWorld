@@ -6,7 +6,7 @@ package com.example.xuetaotao.helloworld.sinaapi;
 public interface Constants {
 
     /**当前该 APP 使用的 APP_KEY ，其他应用使用需要替换*/
-    public static final String APP_KEY = "396518504";
+    public static final String APP_KEY = "646248675";
 
 
     /**

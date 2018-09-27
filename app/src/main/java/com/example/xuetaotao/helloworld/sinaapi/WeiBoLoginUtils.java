@@ -1,9 +1,13 @@
 package com.example.xuetaotao.helloworld.sinaapi;
 
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.xuetaotao.helloworld.main.HelloWorldActivity;
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.auth.AccessTokenKeeper;
 import com.sina.weibo.sdk.auth.AuthInfo;
@@ -11,6 +15,8 @@ import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WbAuthListener;
 import com.sina.weibo.sdk.auth.WbConnectErrorMessage;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
+import com.sina.weibo.sdk.exception.WeiboException;
+import com.sina.weibo.sdk.net.RequestListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,7 +28,7 @@ import java.util.Date;
  * 3.   创建微博API接口类对象 初始化WbSdk对象（在应用的Application或者调用SDK功能代码前）
  * 4.   实现WbAuthListener接口
  * 5.   调用方法，认证授权
- * 6.   添加SSOhandler的回调
+ * 6.   添加SSOhandler的回调，需要在 {@link #onActivityResult} 中调用 {@link SsoHandler#authorizeCallBack}
  */
 public class WeiBoLoginUtils {
 
@@ -35,7 +41,7 @@ public class WeiBoLoginUtils {
         this.activity = activity1;
     }
 
-    public void weiBologin(){
+    public SsoHandler weiBologin(){
 
         AuthInfo authInfo = new AuthInfo(activity, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE);
         WbSdk.install(activity, authInfo);
@@ -49,6 +55,14 @@ public class WeiBoLoginUtils {
 //        ssoHandler.authorizeWeb(new SelfWbAuthListener());
         /** SSO 授权+Web 授权 混合授权。如果手机安装了微博客户端则使用客户端授权,没有则进行网页授权*/
         ssoHandler.authorize(new SelfWbAuthListener());
+
+        // 从 SharedPreferences 中读取上次已保存好 AccessToken 等信息，第一次启动本，AccessToken 不可用
+        mAccessToken = AccessTokenKeeper.readAccessToken(activity);
+        if (mAccessToken.isSessionValid()){
+            updateTokenView(true);
+        }
+
+        return ssoHandler;
     }
 
     /**
@@ -73,6 +87,8 @@ public class WeiBoLoginUtils {
                         //存储Token到SharedPreferences
                         AccessTokenKeeper.writeAccessToken(activity,mAccessToken);
                         Toast.makeText(activity, "授权成功", Toast.LENGTH_SHORT).show();
+                        HelloWorldActivity.newInstance(activity);
+                        activity.finish();
                     }
                 }
             });
@@ -102,5 +118,29 @@ public class WeiBoLoginUtils {
             message = "Token 仍在有效期内，无需再次登录。" + "\n" + message;
         }
         Log.e("WeiBoLoginUtils", message);
+    }
+
+    //用户登出
+    public void loginOut(){
+        AccessTokenKeeper.clear(activity);
+        mAccessToken = new Oauth2AccessToken();
+        updateTokenView(false);
+    }
+
+    //更新Token
+    public void refreshToken(){
+        if (!TextUtils.isEmpty(mAccessToken.getRefreshToken())){
+            AccessTokenKeeper.refreshToken(Constants.APP_KEY, activity, new RequestListener() {
+                @Override
+                public void onComplete(String s) {
+
+                }
+
+                @Override
+                public void onWeiboException(WeiboException e) {
+
+                }
+            });
+        }
     }
 }

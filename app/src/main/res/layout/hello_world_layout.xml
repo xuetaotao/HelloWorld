@@ -34,6 +34,28 @@
                 android:text="第一行代码"/>
 
             <Button
+                android:id="@+id/btn_zhifubao"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/BtnNext"
+                android:text="支付宝授权"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btn_sina"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/BtnNext"
+                android:text="新浪微博授权"
+                android:textSize="18sp"/>
+
+            <Button
                 android:id="@+id/button1"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
