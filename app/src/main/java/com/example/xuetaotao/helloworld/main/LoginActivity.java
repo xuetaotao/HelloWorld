@@ -13,11 +13,14 @@ import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.ali.ALiLoginActivity;
 import com.example.xuetaotao.helloworld.ali.ALiLoginUtils;
 import com.example.xuetaotao.helloworld.base.BaseMvpActivity;
+import com.example.xuetaotao.helloworld.qqapi.QQLoginUtils;
 import com.example.xuetaotao.helloworld.sinaapi.WBAuthActivity;
 import com.example.xuetaotao.helloworld.sinaapi.WeiBoLoginUtils;
 import com.example.xuetaotao.helloworld.utils.LogUtils;
 import com.example.xuetaotao.helloworld.utils.ToastUtils;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
+import com.tencent.connect.common.Constants;
+import com.tencent.tauth.Tencent;
 
 public class LoginActivity extends BaseMvpActivity implements View.OnClickListener{
 
@@ -67,9 +70,19 @@ public class LoginActivity extends BaseMvpActivity implements View.OnClickListen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (ssoHandler != null){
-            ssoHandler.authorizeCallBack(requestCode, resultCode, data);
+        Log.e("LoginActivity","=====onActivityResult=====" + requestCode);
+        switch (requestCode){
+            case 32973:
+                if (ssoHandler != null){
+                    ssoHandler.authorizeCallBack(requestCode, resultCode, data);
+                }
+                break;
+            case Constants.REQUEST_APPBAR:
+            case Constants.REQUEST_LOGIN:
+                Tencent.onActivityResultData(requestCode, resultCode, data, QQLoginUtils.baseUiListener);
+                break;
         }
+
     }
 
     @Override
@@ -93,6 +106,8 @@ public class LoginActivity extends BaseMvpActivity implements View.OnClickListen
 
             /** 腾讯qq授权登录 */
             case R.id.iv_qq:
+                QQLoginUtils qqLogin = new QQLoginUtils(this);
+                qqLogin.qqLogin();
                 break;
 
             /** 微信授权登录 */

@@ -19,6 +19,7 @@ import com.example.xuetaotao.helloworld.dialog.DialogActivity;
 import com.example.xuetaotao.helloworld.map.GaoDeMapActivity;
 import com.example.xuetaotao.helloworld.news.NewsContentActivity;
 import com.example.xuetaotao.helloworld.news.NewsTitleActivity;
+import com.example.xuetaotao.helloworld.qqapi.QQLoginActivity;
 import com.example.xuetaotao.helloworld.sinaapi.WBAuthActivity;
 import com.example.xuetaotao.helloworld.toast.ToastActivity;
 import com.example.xuetaotao.helloworld.webview.WebActivity;
@@ -35,7 +36,7 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
     private int test = 1;
     private TextView textView;
     private Button button1, button2, button3, button4, btnDialog, btnToast, btnNews, btnFirstCode, btnZhiFuBao,
-                    btnSina;
+                    btnSina, btnQq;
 
     public static void newInstance(Context context){
         Intent intent = new Intent();
@@ -91,6 +92,8 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
         btnZhiFuBao.setOnClickListener(this);
         btnSina = (Button) findViewById(R.id.btn_sina);
         btnSina.setOnClickListener(this);
+        btnQq = (Button) findViewById(R.id.btn_qq);
+        btnQq.setOnClickListener(this);
 //        textView.setText(test+"");
 //        test = add(test);
 //        sub(test);
@@ -163,6 +166,10 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
                 Intent intent3 = new Intent();
                 intent3.setClass(this, WBAuthActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn_qq:
+                Intent intent4 = new Intent(this, QQLoginActivity.class);
+                startActivity(intent4);
                 break;
             default:
                 break;

@@ -120,35 +120,50 @@
             android:name=".demo.activitylife.DialogActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Dialog">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Dialog"/>
         <activity
             android:name=".main.HelloWorldActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"/>
 
         <!-- alipay sdk begin -->
-        <activity android:name=".ali.ALiLoginActivity">
-
-        </activity>
-
+        <activity android:name=".ali.ALiLoginActivity"/>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".qqapi.QQLoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
+
+        <!--AuthActivity是在jar包已经定义的好的，需要声明才能使用-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent222222" />
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
 
     </application>
 
