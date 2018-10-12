@@ -23,6 +23,7 @@ import com.example.xuetaotao.helloworld.qqapi.QQLoginActivity;
 import com.example.xuetaotao.helloworld.sinaapi.WBAuthActivity;
 import com.example.xuetaotao.helloworld.toast.ToastActivity;
 import com.example.xuetaotao.helloworld.webview.WebActivity;
+import com.example.xuetaotao.helloworld.wxapi.WXEntryActivity;
 
 import butterknife.BindView;
 
@@ -36,7 +37,7 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
     private int test = 1;
     private TextView textView;
     private Button button1, button2, button3, button4, btnDialog, btnToast, btnNews, btnFirstCode, btnZhiFuBao,
-                    btnSina, btnQq;
+                    btnSina, btnQq, btnWeiXin;
 
     public static void newInstance(Context context){
         Intent intent = new Intent();
@@ -94,6 +95,8 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
         btnSina.setOnClickListener(this);
         btnQq = (Button) findViewById(R.id.btn_qq);
         btnQq.setOnClickListener(this);
+        btnWeiXin = (Button) findViewById(R.id.btn_weixin);
+        btnWeiXin.setOnClickListener(this);
 //        textView.setText(test+"");
 //        test = add(test);
 //        sub(test);
@@ -170,6 +173,10 @@ public class HelloWorldActivity extends BaseTitleActivity implements View.OnClic
             case R.id.btn_qq:
                 Intent intent4 = new Intent(this, QQLoginActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.btn_weixin:
+                Intent intent5 = new Intent(this, WXEntryActivity.class);
+                startActivity(intent5);
                 break;
             default:
                 break;

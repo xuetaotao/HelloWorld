@@ -83,6 +83,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".demo.wechat.WeChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.fragment.SimpleFragmentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".demo.activitylife.ActivityLifeCycleTest"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
@@ -145,7 +153,7 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>
 
-        <!--AuthActivity是在jar包已经定义的好的，需要声明才能使用-->
+        <!--QQ授权登录  AuthActivity是在jar包已经定义的好的，需要声明才能使用-->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -154,7 +162,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="tencent222222" />
+                <data android:scheme="tencent101509822" />
             </intent-filter>
         </activity>
 
@@ -163,6 +171,16 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!--微信授权登录-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent"/>
 
 
     </application>

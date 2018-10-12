@@ -45,4 +45,7 @@ dependencies {
 
     //新浪微博认证授权
     implementation 'com.sina.weibo.sdk:core:4.3.0:openDefaultRelease@aar'
+
+    //微信登录，分享，收藏，支付需要的库
+    implementation  'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }

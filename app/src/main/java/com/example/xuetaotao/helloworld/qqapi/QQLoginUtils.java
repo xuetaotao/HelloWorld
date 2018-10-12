@@ -21,7 +21,7 @@ import org.json.JSONObject;
  */
 public class QQLoginUtils {
 
-    private String AppID = "222222";
+    private String AppID = "101509822";
     private Activity activity;
     private Tencent mTencent;
     private UserInfo userInfo;
@@ -53,6 +53,14 @@ public class QQLoginUtils {
             }
             ToastUtils.showToast(activity, "登录成功");
             Log.e("QQLoginUtils", response.toString());
+//            String accessToken = response.toString();
+//            try {
+//                JSONObject json = new JSONObject(accessToken);
+//                String token = json.getString("access_token");
+//                Log.e("QQLoginUtils", token);
+//            } catch (JSONException e){
+//                e.printStackTrace();
+//            }
             initOpenidAndToken(jsonResponse);
             getAccountInfo();
 //            HelloWorldActivity.newInstance(activity);

@@ -16,6 +16,26 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_simple_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="4.2.1 碎片的简单用法"/>
+
+            <Button
+                android:id="@+id/btn_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                style="@style/BtnNext"
+                android:text="3.7  编写界面的最佳实践"/>
+
+            <Button
                 android:id="@+id/btn_recyclerview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

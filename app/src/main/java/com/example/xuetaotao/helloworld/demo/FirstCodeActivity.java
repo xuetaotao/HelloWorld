@@ -18,9 +18,11 @@ import android.widget.Toast;
 import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 import com.example.xuetaotao.helloworld.demo.activitylife.ActivityLifeCycleTest;
+import com.example.xuetaotao.helloworld.demo.fragment.SimpleFragmentActivity;
 import com.example.xuetaotao.helloworld.demo.listview.ListViewActivity;
 import com.example.xuetaotao.helloworld.demo.listview.SimpleListViewActivity;
 import com.example.xuetaotao.helloworld.demo.recyclerview.RecyclerViewActivity;
+import com.example.xuetaotao.helloworld.demo.wechat.WeChatActivity;
 import com.example.xuetaotao.helloworld.utils.ActivityUtils;
 
 /**
@@ -269,6 +271,28 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 RecyclerViewActivity.newInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         * 3.7 编写界面的最佳实践
+         */
+        Button btnWechat = (Button) findViewById(R.id.btn_wechat);
+        btnWechat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                WeChatActivity.newInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         * 4.2.1 碎片的简单用法
+         */
+        Button btnSimpleFragment = (Button) findViewById(R.id.btn_simple_fragment);
+        btnSimpleFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                SimpleFragmentActivity.newInstance(FirstCodeActivity.this);
             }
         });
     }
