@@ -18,6 +18,9 @@ import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.RequestListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -55,6 +58,7 @@ public class WeiBoLoginUtils {
 //        ssoHandler.authorizeWeb(new SelfWbAuthListener());
         /** SSO 授权+Web 授权 混合授权。如果手机安装了微博客户端则使用客户端授权,没有则进行网页授权*/
         ssoHandler.authorize(new SelfWbAuthListener());
+        Log.e("===WeiBo1===", "===WeiBo1===");
 
         // 从 SharedPreferences 中读取上次已保存好 AccessToken 等信息，第一次启动本，AccessToken 不可用
         mAccessToken = AccessTokenKeeper.readAccessToken(activity);
@@ -81,12 +85,26 @@ public class WeiBoLoginUtils {
                 @Override
                 public void run() {
                     mAccessToken = oauth2AccessToken;
+                    //不可以 error
+//                    String accessToken = mAccessToken.toString();
+//                    Log.e("WeiBoAccessToken", accessToken);
+//                    try {
+//                        JSONObject json = new JSONObject(accessToken);
+//                        String token = json.getString("access_token");
+//                        Log.e("WeiBoLogin", token);
+//                    } catch (JSONException e){
+//                        Log.e("WeiBoLogin", "WeiBoLogin");
+//                        e.printStackTrace();
+//                    }
                     if (mAccessToken.isSessionValid()){
                         //显示Token
                         updateTokenView(false);
                         //存储Token到SharedPreferences
                         AccessTokenKeeper.writeAccessToken(activity,mAccessToken);
                         Toast.makeText(activity, "授权成功", Toast.LENGTH_SHORT).show();
+                        String access = mAccessToken.toString();
+                        Log.e("=====WeiBo=====", mAccessToken.toString());
+                        Log.e("===WeiBo3===", "===WeiBo3===");
                         HelloWorldActivity.newInstance(activity);
                         activity.finish();
                     }

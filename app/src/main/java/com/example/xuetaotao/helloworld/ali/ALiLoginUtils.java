@@ -112,6 +112,7 @@ public class ALiLoginUtils {
         boolean rsa2 = (RSA2_PRIVATE.length() > 0);
         Map<String, String> authInfoMap = OrderInfoUtil2_0.buildAuthInfoMap(PID, APPID, TARGET_ID, rsa2);
         String info = OrderInfoUtil2_0.buildOrderParam(authInfoMap);
+        Log.e("ALiLoginActivity", "=====authInfo=====" + info);
 
         String privateKey = rsa2 ? RSA2_PRIVATE : RSA_PRIVATE;
         String sign = OrderInfoUtil2_0.getSign(authInfoMap, privateKey, rsa2);
@@ -126,6 +127,7 @@ public class ALiLoginUtils {
                 // 调用授权接口，获取授权结果
                 Map<String, String> result = authTask.authV2(authInfo, true);
 
+                Log.e("=====ALi=====", result.toString());
                 Message msg = new Message();
                 msg.what = SDK_AUTH_FLAG;
                 msg.obj = result;

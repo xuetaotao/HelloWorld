@@ -18,4 +18,13 @@
         android:layout_weight="1"
         android:name="com.example.xuetaotao.helloworld.demo.fragment.RightFragment"/>
 
+    <FrameLayout
+        android:id="@+id/fl_another_fragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/common_tv_gray">
+
+    </FrameLayout>
+
 </LinearLayout>

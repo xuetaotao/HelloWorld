@@ -74,6 +74,8 @@ public class LoginActivity extends BaseMvpActivity implements View.OnClickListen
         switch (requestCode){
             case 32973:
                 if (ssoHandler != null){
+                    Log.e("=====WeiBoLogin=====","=====onActivityResult=====" + requestCode);
+                    Log.e("===WeiBo2===", "===WeiBo2===");
                     ssoHandler.authorizeCallBack(requestCode, resultCode, data);
                 }
                 break;
