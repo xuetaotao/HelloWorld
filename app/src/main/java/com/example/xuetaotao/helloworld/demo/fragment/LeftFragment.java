@@ -19,15 +19,20 @@ public class LeftFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.left_fragment, container, false);
-        Button btn1 = (Button) view.findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtils.showToast(getActivity(), "宝儿早安");
-            }
-        });
+//        Button btn1 = (Button) view.findViewById(R.id.btn1);
+//        btn1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ToastUtils.showToast(getActivity(), "宝儿早安");
+//            }
+//        });
 
         return view;
+    }
+
+    public void CommuWithActivity(){
+
+        ToastUtils.showToast(getActivity(), "这是LeftFragment中的方法");
     }
 
 }

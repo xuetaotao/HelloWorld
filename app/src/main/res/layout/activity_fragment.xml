@@ -25,6 +25,12 @@
         android:layout_weight="1"
         android:background="@color/common_tv_gray">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="动态添加碎片"/>
+
     </FrameLayout>
 
 </LinearLayout>

@@ -12,6 +12,6 @@
         android:layout_gravity="center"
         style="@style/BtnNext"
         android:textAllCaps="false"
-        android:text="Button"/>
+        android:text="4.2.2 动态添加碎片"/>
 
 </LinearLayout>
