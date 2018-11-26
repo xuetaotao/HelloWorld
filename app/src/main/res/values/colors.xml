@@ -15,5 +15,8 @@
     <color name="white">#ffffff</color>
     <color name="green">#5cb85c</color>
     <color name="black">#000</color>
+    <color name="tv_black">#333333</color>
+    <color name="lightYellow">#FF8C00</color>
+
 
 </resources>

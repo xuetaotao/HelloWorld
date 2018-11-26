@@ -1,25 +1,34 @@
 package com.example.xuetaotao.helloworld.dialog;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
+import com.example.xuetaotao.helloworld.utils.ToastUtils;
 
 import java.util.Calendar;
 
@@ -43,6 +52,17 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_dialog);
 
+        TextView tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText(R.string.main_function);
+
+        Drawable drawableLeft = getResources().getDrawable(R.drawable.icon_location);
+        //方法1：setCompoundDrawables 画的drawable的宽高，是按drawable.setBound()设置的宽高
+//        drawableLeft.setBounds(0, 0, drawableLeft.getMinimumWidth(), drawableLeft.getMinimumHeight());
+//        tv_title.setCompoundDrawables(drawableLeft, null, null, null);
+        //方法2：setCompoundDrawablesWithIntrinsicBounds画的drawable的宽高，是按drawable固定的宽高
+        tv_title.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, null, null, null);
+        tv_title.setCompoundDrawablePadding(10);
+
         Button btnAlertdialog = (Button) findViewById(R.id.btn_alertdialog);
         btnAlertdialog.setOnClickListener(this);
         Button btnAlertdialog2 = (Button) findViewById(R.id.btn_alertdialog2);
@@ -65,6 +85,8 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
         btnTimeDialog.setOnClickListener(this);
         Button btnDateTimeDialog = (Button) findViewById(R.id.btn_date_time_dialog);
         btnDateTimeDialog.setOnClickListener(this);
+        Button btnCustomDialog2 = (Button) findViewById(R.id.btn_custom_dialog2);
+        btnCustomDialog2.setOnClickListener(this);
     }
 
     @Override
@@ -74,7 +96,8 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
 
     @Override
     public int getTitleText() {
-        return R.string.main_function;
+//        return R.string.main_function;
+        return 0;
     }
 
     @Override
@@ -346,6 +369,42 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
                 }, hour2, minute2, true);
                 timePickerDialog.show();
                 datePickerDialog.show();
+                break;
+            /**
+             * 完全自定义的Dialog
+             */
+            case R.id.btn_custom_dialog2:
+                LayoutInflater inflater = LayoutInflater.from(DialogActivity.this);
+                View view = inflater.inflate(R.layout.dialog_upgrade_lsp, null);
+                final Dialog dialog2 = new Dialog(DialogActivity.this, R.style.invitation_dialog);
+                Window window = dialog2.getWindow();
+                WindowManager.LayoutParams layoutParams = window.getAttributes();
+                layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+                layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                layoutParams.gravity = Gravity.CENTER;
+
+                LinearLayout showMain = (LinearLayout) view.findViewById(R.id.ll_show_main);
+                Button btnUpgrade = (Button) view.findViewById(R.id.btn_upgrade);
+                btnUpgrade.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2.dismiss();
+                        ToastUtils.showToast(DialogActivity.this, "升级成功");
+                    }
+                });
+                TextView tvCancel = (TextView) view.findViewById(R.id.tv_cancel);
+                tvCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2.dismiss();
+                        finish();
+                    }
+                });
+
+                window.setAttributes(layoutParams);
+                dialog2.setCancelable(true);
+                dialog2.setContentView(showMain);
+                dialog2.show();
                 break;
             default:
                 break;

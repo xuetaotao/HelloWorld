@@ -85,11 +85,11 @@
         <activity
             android:name=".demo.wechat.WeChatActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".demo.fragment.SimpleFragmentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".demo.activitylife.ActivityLifeCycleTest"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -128,61 +128,64 @@
             android:name=".demo.activitylife.DialogActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Dialog"/>
+            android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".main.HelloWorldActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <!-- alipay sdk begin -->
-        <activity android:name=".ali.ALiLoginActivity"/>
+        <activity android:name=".ali.ALiLoginActivity" />
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".qqapi.QQLoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
-        <!--QQ授权登录  AuthActivity是在jar包已经定义的好的，需要声明才能使用-->
+        <!-- QQ授权登录  AuthActivity是在jar包已经定义的好的，需要声明才能使用 -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent101509822" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <!--微信授权登录-->
+        <!-- 微信授权登录 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"
-            android:screenOrientation="portrait"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Translucent"/>
-
-
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".demo.broadcasttest.BroadcastTest"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

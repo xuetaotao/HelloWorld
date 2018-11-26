@@ -115,6 +115,15 @@
                 android:textAllCaps="false"
                 android:text="DateTimeDialog"/>
 
+            <Button
+                android:id="@+id/btn_custom_dialog2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/BtnNext"
+                android:textAllCaps="false"
+                android:text="自定义Dialog"/>
+
         </LinearLayout>
 
     </ScrollView>
