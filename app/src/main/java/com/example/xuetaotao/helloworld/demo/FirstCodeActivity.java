@@ -19,6 +19,7 @@ import com.example.xuetaotao.helloworld.R;
 import com.example.xuetaotao.helloworld.base.BaseTitleActivity;
 import com.example.xuetaotao.helloworld.demo.activitylife.ActivityLifeCycleTest;
 import com.example.xuetaotao.helloworld.demo.fragment.SimpleFragmentActivity;
+import com.example.xuetaotao.helloworld.demo.intenttest.IntentActivity1;
 import com.example.xuetaotao.helloworld.demo.listview.ListViewActivity;
 import com.example.xuetaotao.helloworld.demo.listview.SimpleListViewActivity;
 import com.example.xuetaotao.helloworld.demo.recyclerview.RecyclerViewActivity;
@@ -293,6 +294,19 @@ public class FirstCodeActivity extends BaseTitleActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 SimpleFragmentActivity.newInstance(FirstCodeActivity.this);
+            }
+        });
+
+        /**
+         * 测试Intent
+         * 此例用来验证Intent传递多个数据时，是否可以只取其中一部分
+         * 验证结果，可以
+         */
+        Button btn_test_intent = (Button) findViewById(R.id.btn_test_intent);
+        btn_test_intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentActivity1.newInstance(FirstCodeActivity.this);
             }
         });
     }

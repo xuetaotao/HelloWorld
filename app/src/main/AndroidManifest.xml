@@ -185,7 +185,20 @@
         <activity
             android:name=".demo.broadcasttest.BroadcastTest"
             android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.intenttest.IntentActivity1"
+            android:configChanges="screenSize|keyboardHidden|orientation"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.intenttest.IntentActivity2"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".webview.ModifyingPersonalActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

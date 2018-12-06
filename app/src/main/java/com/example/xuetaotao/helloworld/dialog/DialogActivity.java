@@ -57,10 +57,15 @@ public class DialogActivity extends BaseTitleActivity implements View.OnClickLis
 
         Drawable drawableLeft = getResources().getDrawable(R.drawable.icon_location);
         //方法1：setCompoundDrawables 画的drawable的宽高，是按drawable.setBound()设置的宽高
-//        drawableLeft.setBounds(0, 0, drawableLeft.getMinimumWidth(), drawableLeft.getMinimumHeight());
+        drawableLeft.setBounds(0, 0, drawableLeft.getMinimumWidth(), drawableLeft.getMinimumHeight());
 //        tv_title.setCompoundDrawables(drawableLeft, null, null, null);
         //方法2：setCompoundDrawablesWithIntrinsicBounds画的drawable的宽高，是按drawable固定的宽高
-        tv_title.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, null, null, null);
+//        tv_title.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, null, null, null);
+//        tv_title.setCompoundDrawablePadding(10);
+
+        Drawable drawableRight = getResources().getDrawable(R.drawable.icon_arrow);
+        drawableRight.setBounds(0, 0, drawableRight.getMinimumWidth(), drawableRight.getMinimumHeight());
+        tv_title.setCompoundDrawables(drawableLeft, null, drawableRight, null);
         tv_title.setCompoundDrawablePadding(10);
 
         Button btnAlertdialog = (Button) findViewById(R.id.btn_alertdialog);
